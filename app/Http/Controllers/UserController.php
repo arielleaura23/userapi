@@ -34,4 +34,30 @@ class UserController extends Controller
         $users= User::all();
         return view('show_users')->with('users',$users);
     }
+
+    public function search(Request $request) {
+        $keyword = $request->input('keyword');
+        $users = User::where('lastname', 'like', "%$keyword%")
+                    ->orWhere('firstname', 'like', "%$keyword%")
+                    ->orWhere('email', 'like', "%$keyword%")
+                    ->orWhere('phone', 'like', "%$keyword%")
+                    ->orWhere('user_id', 'like', "%$keyword%")
+                    ->get();
+        return response()->json($users);
+
+    }
+
+    public function research(Request $request) {
+        $keyword = $request->input('keyword');
+        $users = User::where('lastname', 'like', "%$keyword%")
+                    ->orWhere('firstname', 'like', "%$keyword%")
+                    ->orWhere('email', 'like', "%$keyword%")
+                    ->orWhere('phone', 'like', "%$keyword%")
+                    ->orWhere('user_id', 'like', "%$keyword%")
+                    ->get();
+                    return view('show_users_search')->with('users',$users);
+
+    }
+
+
 }

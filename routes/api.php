@@ -19,7 +19,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::post('/apiUsers/storeUsers', [UserController::class, 'store'])->name('store'); // Enregistrer l'utilisateur
+Route::post('/apiUsers/storeUsers', [UserController::class, 'store']); // Enregistrer l'utilisateur
 Route::get('/apiUsers/showUsers', [UserController::class, 'show'])->name('show.users'); // Afficher les utilisateurs
 Route::post('/apiUsers/searchUsers', [UserController::class, 'search'])->name('search'); // chercher les utilisateurs
 Route::post('/apiUsers/researchUsers', [UserController::class, 'research'])->name('research'); // chercher les utilisateurs

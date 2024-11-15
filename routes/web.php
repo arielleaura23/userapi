@@ -19,4 +19,5 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [UserController::class, 'index']); // Afficher la page d'accueil
 Route::get('/apiUsers/formulaire', [UserController::class, 'form'])->name('form'); // Afficher le formulaire
+Route::post('/apiUsers/storeUsers', [UserController::class, 'store'])->name('store'); // Enregistrer l'utilisateur
 

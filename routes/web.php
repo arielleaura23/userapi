@@ -18,8 +18,5 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('/', [UserController::class, 'index']); // Afficher la page d'accueil
-Route::post('/apiUsers/storeUsers', [UserController::class, 'store'])->name('store'); // Enregistrer l'utilisateur
-Route::get('/apiUsers/showUsers', [UserController::class, 'show'])->name('show.users'); // Afficher les utilisateurs
 Route::get('/apiUsers/formulaire', [UserController::class, 'form'])->name('form'); // Afficher le formulaire
-Route::post('/apiUsers/searchUsers', [UserController::class, 'search'])->name('search'); // chercher les utilisateurs
-Route::post('/apiUsers/researchUsers', [UserController::class, 'research'])->name('research'); // chercher les utilisateurs
+

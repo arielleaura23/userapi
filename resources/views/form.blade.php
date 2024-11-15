@@ -13,7 +13,7 @@
             <div class="title">
                 <h1 class="title-content">FORMULAIRE D'ENREGISTREMENT</h1>
             </div>
-            <form action="{{ route('store') }}" method="POST" class="form">
+            <form action="http://127.0.0.1:8000/api/apiUsers/storeUsers" method="POST" class="form">
                 @csrf
                 <div class="input-group">
                     <label for="firstname">Nom<span style="color: red">*</span></label>
